@@ -1,11 +1,11 @@
 "use client";
 
-import CourseCardSearch from "@/components/CourseCardSearch";
-import Loading from "@/components/ui/Loading";
+import Loading from "@/components/Loading";
 import { useGetCoursesQuery } from "@/state/api";
-import { motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import CourseCardSearch from "@/components/CourseCardSearch";
 import SelectedCourse from "./SelectedCourse";
 
 const Search = () => {
@@ -85,4 +85,5 @@ const Search = () => {
     </motion.div>
   );
 };
+
 export default Search;

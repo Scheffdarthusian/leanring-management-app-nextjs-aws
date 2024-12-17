@@ -6,7 +6,7 @@ const TeacherSettings = () => {
     <div className="w-3/5">
       <SharedNotificationSettings
         title="Teacher Settings"
-        subtitle="Manage your user notification settings"
+        subtitle="Manage your teacher notification settings"
       />
     </div>
   );

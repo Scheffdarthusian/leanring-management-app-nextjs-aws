@@ -34,7 +34,7 @@ const PaymentPageContent = () => {
     const baseUrl = process.env.NEXT_PUBLIC_LOCAL_URL
       ? `http://${process.env.NEXT_PUBLIC_LOCAL_URL}`
       : process.env.NEXT_PUBLIC_VERCEL_URL
-      ? `http://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : undefined;
 
     const result = await stripe.confirmPayment({
@@ -73,7 +73,7 @@ const PaymentPageContent = () => {
           <CoursePreview course={course} />
         </div>
 
-        {/* Payment Form */}
+        {/* Pyament Form */}
         <div className="payment__form-container">
           <form
             id="payment-form"
@@ -85,6 +85,7 @@ const PaymentPageContent = () => {
               <p className="payment__subtitle">
                 Fill out the payment details below to complete your purchase.
               </p>
+
               <div className="payment__method">
                 <h3 className="payment__method-title">Payment Method</h3>
 
@@ -116,8 +117,8 @@ const PaymentPageContent = () => {
 
         <Button
           form="payment-form"
-          className="payment__submit"
           type="submit"
+          className="payment__submit"
           disabled={!stripe || !elements}
         >
           Pay with Credit Card

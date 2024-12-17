@@ -1,7 +1,9 @@
+"use client";
+
 import CoursePreview from "@/components/CoursePreview";
 import { CustomFormField } from "@/components/CustomFormField";
+import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
-import Loading from "@/components/ui/Loading";
 import { useCurrentCourse } from "@/hooks/useCurrentCourse";
 import { GuestFormData, guestSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,12 +37,12 @@ const CheckoutDetailsPage = () => {
           <CoursePreview course={selectedCourse} />
         </div>
 
-        {/* STRECH FEATURE */}
+        {/* STRETCH FEATURE */}
         <div className="checkout-details__options">
           <div className="checkout-details__guest">
             <h2 className="checkout-details__title">Guest Checkout</h2>
             <p className="checkout-details__subtitle">
-              Enter Email to receive course access details and order
+              Enter email to receive course access details and order
               confirmation. You can create an account after purchase.
             </p>
             <Form {...methods}>
@@ -70,7 +72,7 @@ const CheckoutDetailsPage = () => {
             <span className="checkout-details__divider-text">Or</span>
             <hr className="checkout-details__divider-line" />
           </div>
-          
+
           <div className="checkout-details__auth">
             {showSignUp ? <SignUpComponent /> : <SignInComponent />}
           </div>

@@ -18,6 +18,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
 
       <div className="selected-course__content">
         <p className="selected-course__description">{course.description}</p>
+
         <div className="selected-course__sections">
           <h4 className="selected-course__sections-title">Course Content</h4>
           <AccordionSections sections={course.sections} />

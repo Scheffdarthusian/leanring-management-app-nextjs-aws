@@ -22,7 +22,10 @@ const AccordionSections = ({ sections }: AccordionSectionsProps) => {
           <AccordionContent className="accordion-section__content">
             <ul>
               {section.chapters.map((chapter) => (
-                <li key={chapter.chapterId} className="accordion-section__chapter">
+                <li
+                  key={chapter.chapterId}
+                  className="accordion-section__chapter"
+                >
                   <FileText className="mr-2 w-4 h-4" />
                   <span className="text-sm">{chapter.title}</span>
                 </li>

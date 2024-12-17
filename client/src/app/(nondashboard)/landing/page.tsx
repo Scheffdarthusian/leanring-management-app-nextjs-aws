@@ -30,9 +30,10 @@ const LoadingSkeleton = () => {
 
         <div className="landing-skeleton__tags">
           {[1, 2, 3, 4, 5].map((_, index) => (
-            <Skeleton key={index} className="landing-skeleton__title" />
+            <Skeleton key={index} className="landing-skeleton__tag" />
           ))}
         </div>
+
         <div className="landing-skeleton__courses">
           {[1, 2, 3, 4].map((_, index) => (
             <Skeleton key={index} className="landing-skeleton__course-card" />
@@ -47,6 +48,7 @@ const Landing = () => {
   const router = useRouter();
   const currentImage = useCarousel({ totalImages: 3 });
   const { data: courses, isLoading, isError } = useGetCoursesQuery({});
+
   const handleCourseClick = (courseId: string) => {
     router.push(`/search?id=${courseId}`, {
       scroll: false,
@@ -89,7 +91,7 @@ const Landing = () => {
               alt={`Hero Banner ${index + 1}`}
               fill
               priority={index === currentImage}
-              sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={`landing__hero-image ${
                 index === currentImage ? "landing__hero-image--active" : ""
               }`}
@@ -106,16 +108,17 @@ const Landing = () => {
       >
         <h2 className="landing__featured-title">Featured Courses</h2>
         <p className="landing__featured-description">
-          From biginner to advanced, in all industries, we have the right
+          From beginner to advanced, in all industries, we have the right
           courses just for you and preparing your entire journey for learning
           and making the most.
         </p>
+
         <div className="landing__tags">
           {[
             "web development",
             "enterprise IT",
             "react nextjs",
-            "web development",
+            "javascript",
             "backend development",
           ].map((tag, index) => (
             <span key={index} className="landing__tag">

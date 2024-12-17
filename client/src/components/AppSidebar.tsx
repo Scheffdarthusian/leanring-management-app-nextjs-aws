@@ -20,7 +20,7 @@ import {
   Settings,
   User,
 } from "lucide-react";
-import Loading from "@/components/ui/Loading";
+import Loading from "./Loading";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -105,9 +105,9 @@ const AppSidebar = () => {
                   )}
                 >
                   <Link
-                    scroll={false}
                     href={link.href}
                     className="app-sidebar__nav-link"
+                    scroll={false}
                   >
                     <link.icon
                       className={isActive ? "text-white-50" : "text-gray-500"}

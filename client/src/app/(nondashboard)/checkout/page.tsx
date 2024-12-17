@@ -1,6 +1,6 @@
 "use client";
 
-import Loading from "@/components/ui/Loading";
+import Loading from "@/components/Loading";
 import WizardStepper from "@/components/WizardStepper";
 import { useCheckoutNavigation } from "@/hooks/useCheckoutNavigation";
 import { useUser } from "@clerk/nextjs";
@@ -24,7 +24,7 @@ const CheckoutWizard = () => {
       case 3:
         return <CompletionPage />;
       default:
-        return "checkout details page";
+        return <CheckoutDetailsPage />;
     }
   };
 
